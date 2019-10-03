@@ -1,11 +1,5 @@
 import React from "react"
-import styled from "styled-components"
 
-import Button from "@material-ui/core/Button"
-import Card from "@material-ui/core/Card"
-import CardActions from "@material-ui/core/CardActions"
-import CardContent from "@material-ui/core/CardContent"
-import CardMedia from "@material-ui/core/CardMedia"
 import CssBaseline from "@material-ui/core/CssBaseline"
 import Grid from "@material-ui/core/Grid"
 import Typography from "@material-ui/core/Typography"
@@ -39,27 +33,29 @@ const useStyles = makeStyles(theme => ({
   cardContent: {
     flexGrow: 1,
   },
-  footer: {
+  about: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
   },
 }))
 
-const homescreen = () => {
-  return <React.fragment></React.fragment>
+const About = () => {
+  const classes = useStyles()
+  return (
+    <div className={classes.about}>
+      <Typography variant="h6" align="center" gutterBottom>
+        About me
+      </Typography>
+      <Typography
+        variant="subtitle1"
+        align="center"
+        color="textSecondary"
+        component="p"
+      >
+        Stuff about me goes here
+      </Typography>
+    </div>
+  )
 }
 
-const Name = styled.h1`
-z-index=100;
-`
-
-const SquareTitle = styled.div`
-  top:10%;
-  position: absolute;
-  background-color: #777;
-  width: 50%;
-  height: 300px;
-  z-index=-100;
-  
-`
-export default homescreen
+export default About

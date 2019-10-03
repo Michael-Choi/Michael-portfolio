@@ -1,21 +1,30 @@
 import React from "react"
-//import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-//import Image from "../components/image"
+
 import SEO from "../components/seo"
-import Homescreen from "../components/home"
-import Projects from "../components/projects"
-import About from "../components/about"
+
+import Projects from "../components/Projects"
+import About from "../components/About"
+import Front from "../components/Front"
+
+import styled from "styled-components"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    {/* <Homescreen /> */}
-
+    <StyledFront />
     <Projects />
     <About />
   </Layout>
 )
+
+const StyledFront = styled(Front)`
+  top: 100px;
+  border: 3px solid black;
+  margin: 100px auto;
+  width: 50%;
+  position: fixed;
+`
 
 export default IndexPage
