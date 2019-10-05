@@ -1,36 +1,21 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-
 import Header from "./Header"
-// import "./layout.css"
-
+import styled from "styled-components"
+import Paper from "@material-ui/core"
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <>
       <Header />
       <main>{children}</main>
-      <footer>
+
+      <Footer>
         Designed and developed by Michael Choi © {new Date().getFullYear()}
-      </footer>
+      </Footer>
     </>
   )
 }
 
+const Footer = styled.footer`
+  padding: 10px 10px;
+`
 export default Layout

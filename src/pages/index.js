@@ -9,10 +9,12 @@ import About from "../components/About"
 import Front from "../components/Front"
 
 import styled from "styled-components"
+import { Paper } from "@material-ui/core"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
+
     <StyledFront />
     <Projects />
     <About />
@@ -20,7 +22,6 @@ const IndexPage = () => (
 )
 
 const StyledFront = styled(Front)`
-  top: 100px;
   border: 3px solid black;
   margin: 100px auto;
   width: 50%;
