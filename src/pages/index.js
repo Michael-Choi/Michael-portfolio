@@ -14,18 +14,12 @@ import { Paper } from "@material-ui/core"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-
     <StyledFront />
     <Projects />
     <About />
   </Layout>
 )
 
-const StyledFront = styled(Front)`
-  border: 3px solid black;
-  margin: 100px auto;
-  width: 50%;
-  position: fixed;
-`
+const StyledFront = styled(Front)``
 
 export default IndexPage

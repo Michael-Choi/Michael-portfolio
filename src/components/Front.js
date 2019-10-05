@@ -16,39 +16,47 @@ const Front = () => {
   return (
     <StyledDiv id="Front">
       <CssBaseline />
-      <div className={classes.heroContent}>
-        <Container maxWidth="sm">
-          <Typography
-            component="h1"
-            variant="h2"
-            align="left"
-            color="textPrimary"
-            gutterBottom
-          >
-            Michael Choi
-          </Typography>
+      <StyledBackground className={classes.heroContent}>
+        <StyledContainer maxWidth="md">
+          <div>
+            <Typography
+              component="h1"
+              variant="h2"
+              align="left"
+              color="textPrimary"
+              gutterBottom
+            >
+              Michael Choi
+            </Typography>
 
-          <Typography variant="h5" align="left" color="textSecondary" paragraph>
-            A full-stack software developer that loves to learn about new tech
-            and and collaborating with cool people.
-          </Typography>
+            <Typography
+              variant="h5"
+              align="left"
+              color="textSecondary"
+              paragraph
+            >
+              A full-stack software developer that loves to learn about new tech
+              and collaborate with cool people.
+            </Typography>
 
-          <div className={classes.heroButtons}>
-            <Grid container spacing={2} justify="center">
-              <Grid item>
-                <Button variant="contained" color="primary">
-                  View my work
-                </Button>
+            <div className={classes.heroButtons}>
+              <p>linked in, github, email</p>
+              <Grid container spacing={2} justify="center">
+                <Grid item>
+                  <Button variant="contained" color="primary">
+                    View my work
+                  </Button>
+                </Grid>
+                <Grid item>
+                  <Button variant="outlined" color="primary">
+                    Resume
+                  </Button>
+                </Grid>
               </Grid>
-              <Grid item>
-                <Button variant="outlined" color="primary">
-                  Resume
-                </Button>
-              </Grid>
-            </Grid>
+            </div>
           </div>
-        </Container>
-      </div>
+        </StyledContainer>
+      </StyledBackground>
     </StyledDiv>
   )
 }
@@ -63,7 +71,18 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const StyledDiv = styled.div`
-  height: 90vh;
+const StyledBackground = styled.div`
+  height: 50vh;
+  display: flex;
+  align-content: center;
+`
+const StyledDiv = styled.div``
+
+const StyledContainer = styled(Container)`
+  display: flex;
+  align-content: center;
+  align-items: center;
+
+  padding: 2%;
 `
 export default Front
