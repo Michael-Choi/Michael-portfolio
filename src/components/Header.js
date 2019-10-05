@@ -5,22 +5,19 @@ import styled from "styled-components"
 const Header = () => {
   const handleClick = event => {
     const anchor = (event.target.ownerDocument || document).querySelector(
-      "#Projects"
+      `#${event.currentTarget.innerHTML}`
     )
-
     if (anchor) {
-      anchor.scrollIntoView({ behavior: "smooth", block: "center" })
+      anchor.scrollIntoView({ behavior: "smooth", block: "start" })
     }
   }
   return (
     <header>
       <StyledAppBar position="relative">
         <StyledToolbar>
-          <StyledNavLink onClick={handleClick} href="#Front">
-            Home
-          </StyledNavLink>
-          <StyledNavLink href="#Projects">Projects</StyledNavLink>
-          <StyledNavLink href="#About">About</StyledNavLink>
+          <StyledNavLink onClick={handleClick}>Home</StyledNavLink>
+          <StyledNavLink onClick={handleClick}>Projects</StyledNavLink>
+          <StyledNavLink onClick={handleClick}>About</StyledNavLink>
         </StyledToolbar>
       </StyledAppBar>
     </header>
