@@ -27,9 +27,7 @@ const Layout = ({ children }) => {
       <Header />
       <main>{children}</main>
       <footer>
-        © {new Date().getFullYear()}, Built from scratch using
-        {` `}
-        <p>Gatsby</p>
+        Designed and developed by Michael Choi © {new Date().getFullYear()}
       </footer>
     </>
   )

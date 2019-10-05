@@ -61,21 +61,27 @@ export default function Projects() {
                     className={classes.cardMedia}
                     image="https://source.unsplash.com/random"
                     title="Image title"
+                    onClick={() => console.log("hello")}
                   />
-                  <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Project Name
-                    </Typography>
-                    <Typography>Brief Description</Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      Demo
-                    </Button>
-                    <Button size="small" color="primary">
-                      Code
-                    </Button>
-                  </CardActions>
+                  <div>
+                    <CardContent
+                      onClick={() => console.log("hello")}
+                      className={classes.cardContent}
+                    >
+                      <Typography gutterBottom variant="h5" component="h2">
+                        Project Name
+                      </Typography>
+                      <Typography>Brief Description</Typography>
+                    </CardContent>
+                    <CardActions>
+                      <Button size="small" color="primary">
+                        Demo
+                      </Button>
+                      <Button size="small" color="primary">
+                        Code
+                      </Button>
+                    </CardActions>
+                  </div>
                 </Card>
               </Grid>
             ))}

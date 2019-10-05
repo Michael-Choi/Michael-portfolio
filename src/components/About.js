@@ -43,17 +43,27 @@ const About = () => {
   const classes = useStyles()
   return (
     <div className={classes.about}>
-      <Typography variant="h6" align="center" gutterBottom>
-        About me
-      </Typography>
-      <Typography
-        variant="subtitle1"
-        align="center"
-        color="textSecondary"
-        component="p"
-      >
-        Stuff about me goes here
-      </Typography>
+      <Container maxWidth="md">
+        <Typography variant="h6" align="left" gutterBottom>
+          About me
+        </Typography>
+        <Typography
+          variant="subtitle1"
+          align="left"
+          color="textSecondary"
+          component="p"
+        >
+          Stuff about me goes here
+        </Typography>
+        <Typography
+          variant="subtitle1"
+          align="left"
+          color="textSecondary"
+          component="p"
+        >
+          Github, linked in, email
+        </Typography>
+      </Container>
     </div>
   )
 }

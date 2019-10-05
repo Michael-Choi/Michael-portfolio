@@ -11,6 +11,7 @@ import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core/styles"
 import Container from "@material-ui/core/Container"
 import Link from "@material-ui/core/Link"
+import styled from "styled-components"
 
 const useStyles = makeStyles(theme => ({
   icon: {
@@ -28,7 +29,7 @@ const useStyles = makeStyles(theme => ({
 const Front = () => {
   const classes = useStyles()
   return (
-    <div>
+    <StyledDiv id="Front">
       <CssBaseline />
       <div className={classes.heroContent}>
         <Container maxWidth="sm">
@@ -42,9 +43,8 @@ const Front = () => {
             Michael Choi
           </Typography>
           <Typography variant="h5" align="left" color="textSecondary" paragraph>
-            A full-stack software developer that loves to design and create fast
-            and responsive websites. I enjoy working with new tech and
-            collaborating with cool people.
+            A full-stack software developer that loves to learn about new tech
+            and and collaborating with cool people.
           </Typography>
           <div className={classes.heroButtons}>
             <Grid container spacing={2} justify="center">
@@ -62,8 +62,8 @@ const Front = () => {
           </div>
         </Container>
       </div>
-    </div>
+    </StyledDiv>
   )
 }
-
+const StyledDiv = styled.div``
 export default Front

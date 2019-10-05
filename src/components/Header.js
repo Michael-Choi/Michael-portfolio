@@ -6,18 +6,24 @@ import styled from "styled-components"
 
 const Header = () => (
   <header>
-    <AppBar position="relative">
+    <StyledAppBar position="relative">
       <StyledToolbar>
-        <h6 color="inherit">Nav Bar testing</h6>
-        <div>Home</div>
+        <a href="#Front">Home</a>
         <div>Projects</div>
         <div>About</div>
       </StyledToolbar>
-    </AppBar>
+    </StyledAppBar>
   </header>
 )
 const StyledToolbar = styled(Toolbar)`
   display: flex;
+  overflow: hidden;
   justify-content: flex-end;
 `
+const StyledAppBar = styled(AppBar)`
+  transform: rotate(45deg) translate(50%, -50%);
+  overflow: hidden;
+  height: 50vh;
+`
+
 export default Header
