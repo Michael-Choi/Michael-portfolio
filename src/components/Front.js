@@ -11,8 +11,17 @@ import {
   makeStyles,
 } from "@material-ui/core"
 
+import { Linkedin, Github, Mail } from "styled-icons/feather"
+
 const Front = () => {
   const classes = useStyles()
+
+  const handleClick = event => {
+    document
+      .querySelector(`#Projects`)
+      .scrollIntoView({ behavior: "smooth", block: "start" })
+  }
+
   return (
     <StyledDiv id="Front">
       <CssBaseline />
@@ -39,11 +48,36 @@ const Front = () => {
               and collaborate with cool people.
             </Typography>
 
+            <StyledIcons
+              href="https://www.linkedin.com/in/michael-b-choi"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin size={25} />
+            </StyledIcons>
+            <StyledIcons
+              href="https://www.github.com/michael-choi"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github size={25} />
+            </StyledIcons>
+            <StyledIcons
+              href="mailto:michael@michaelchoi.ca"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Mail size={25} />
+            </StyledIcons>
+
             <div className={classes.heroButtons}>
-              <p>linked in, github, email</p>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <Button variant="contained" color="primary">
+                  <Button
+                    onClick={handleClick}
+                    variant="contained"
+                    color="primary"
+                  >
                     View my work
                   </Button>
                 </Grid>
@@ -72,9 +106,8 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const StyledBackground = styled.div`
-  height: 50vh;
+  height: 100vh;
   display: flex;
-  align-content: center;
 `
 const StyledDiv = styled.div``
 
@@ -82,7 +115,16 @@ const StyledContainer = styled(Container)`
   display: flex;
   align-content: center;
   align-items: center;
+  padding: 5% 5%;
+`
 
-  padding: 2%;
+const StyledIcons = styled.a`
+  margin: 5px;
+  &:visited {
+    color: inherit;
+  }
+  &:hover {
+    color: #2858c7;
+  }
 `
 export default Front

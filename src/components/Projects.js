@@ -1,6 +1,13 @@
 import React from "react"
-import { CssBaseline, Grid, Typography, Container } from "@material-ui/core"
-import { makeStyles } from "@material-ui/core/styles"
+import {
+  makeStyles,
+  CssBaseline,
+  Grid,
+  Typography,
+  Container,
+} from "@material-ui/core"
+
+import styled from "styled-components"
 
 import Cards from "./Cards"
 
@@ -10,39 +17,59 @@ export default function Projects() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <main>
+      <StyledBackground id="Projects">
         <Container className={classes.cardGrid} maxWidth="md">
           <Typography
-            variant="h5"
+            variant="h4"
             align="left"
             color="textPrimary"
-            id="Projects"
             gutterBottom
           >
             Projects
           </Typography>
           <Grid container spacing={4}>
-            <Cards />
+            {/* Individual project cards get called here with props
+                Requires 
+                projectName (string)
+                imageTitle (string image description)
+                description (string description)
+                demoLink
+                codeLink
+                 */}
+            <Cards
+              key="Learn Now"
+              projectName="Learn Now"
+              imageTitle="Home page of Learn Now"
+              description="A resource aggregation website similar to Pinterest."
+              codeLink="https://github.com/CameronDunning/LearNow"
+            />
+            <Cards
+              key="Learn Now2"
+              projectName="Learn Now"
+              imageTitle="Home page of Learn Now"
+              description="A resource aggregation website similar to Pinterest."
+              codeLink="https://github.com/CameronDunning/LearNow"
+            />
+            <Cards
+              key="Learn Now3"
+              projectName="Learn Now"
+              imageTitle="Home page of Learn Now"
+              description="A resource aggregation website similar to Pinterest."
+              codeLink="https://github.com/CameronDunning/LearNow"
+            />
           </Grid>
         </Container>
-      </main>
+      </StyledBackground>
     </React.Fragment>
   )
 }
 
+const StyledBackground = styled.main`
+  background: #f1f1f1;
+`
 const useStyles = makeStyles(theme => ({
-  icon: {
-    marginRight: theme.spacing(2),
-  },
-  heroContent: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6),
-  },
-  heroButtons: {
-    marginTop: theme.spacing(4),
-  },
   cardGrid: {
-    paddingTop: theme.spacing(8),
+    paddingTop: theme.spacing(6),
     paddingBottom: theme.spacing(8),
   },
 }))

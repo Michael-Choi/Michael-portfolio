@@ -1,7 +1,7 @@
 import React from "react"
 import Header from "./Header"
 import styled from "styled-components"
-import Paper from "@material-ui/core"
+import { Linkedin, Github, Mail } from "styled-icons/feather"
 const Layout = ({ children }) => {
   return (
     <>
@@ -9,13 +9,44 @@ const Layout = ({ children }) => {
       <main>{children}</main>
 
       <Footer>
-        Designed and developed by Michael Choi © {new Date().getFullYear()}
+        Michael Choi © {new Date().getFullYear()} |{" "}
+        <StyledIcons
+          href="https://www.linkedin.com/in/michael-b-choi"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Linkedin size={25} />
+        </StyledIcons>
+        <StyledIcons
+          href="https://www.github.com/michael-choi"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Github size={25} />
+        </StyledIcons>
+        <StyledIcons
+          href="mailto:michael@michaelchoi.ca"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Mail size={25} />
+        </StyledIcons>
       </Footer>
     </>
   )
 }
+const StyledIcons = styled.a`
+  margin: 5px;
+  &:visited {
+    color: inherit;
+  }
+  &:hover {
+    color: #2858c7;
+  }
+`
 
 const Footer = styled.footer`
   padding: 10px 10px;
+  text-align: center;
 `
 export default Layout

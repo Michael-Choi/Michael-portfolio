@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Michael Choi Portfolio`,
+    title: `Portfolio`,
     description: `Michael Choi - Front end developer. Loves to learn new technoloy and work with cool people`,
     author: `Michael Choi`,
   },
@@ -34,7 +34,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/M.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

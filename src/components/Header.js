@@ -26,22 +26,20 @@ const Header = () => {
 
 const StyledToolbar = styled(Toolbar)`
   display: flex;
-  overflow: hidden;
   justify-content: flex-end;
 `
+
 const StyledAppBar = styled(AppBar)`
-  // transform: rotate(45deg) translate(50%, -50%);
-  // overflow: hidden;
-  // height: 50vh;
   background: #2858c7;
+  height: 5vh;
+  justify-content: center;
 `
 const StyledNavLink = styled.a`
   color: white;
-  padding: 12px 20px;
+  padding: 5px 20px;
   text-decoration: none;
   outline: white;
   font-size: 1.2em;
-  text-transform: uppercase;
 
   letter-spacing: 0.1em;
   display: inline-block;

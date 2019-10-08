@@ -10,44 +10,62 @@ import {
   Typography,
   makeStyles,
 } from "@material-ui/core"
+import styled from "styled-components"
 
-const Cards = () => {
+const Cards = props => {
   const classes = useStyles()
-  const cards = [1, 2, 3, 4, 5, 6]
   return (
     <>
-      {cards.map(card => (
-        <Grid item key={card} xs={12} sm={6} md={4}>
-          <Card className={classes.card}>
-            <CardMedia
-              className={classes.cardMedia}
-              image="https://source.unsplash.com/random"
-              title="Image title"
-              onClick={() => console.log("hello")}
-            />
-            <CardContent
-              onClick={() => console.log("hello")}
-              className={classes.cardContent}
-            >
-              <Typography gutterBottom variant="h5" component="h2">
-                Project Name
-              </Typography>
-              <Typography>Brief Description</Typography>
-            </CardContent>
-            <CardActions>
-              <Button size="small" color="primary">
+      <Grid item xs={12} sm={6} md={4}>
+        <Card className={classes.card}>
+          <CardMedia
+            className={classes.cardMedia}
+            image={props.image || "https://source.unsplash.com/random"}
+            title={props.imageTitle || `Demo image of ${props.projectName}`}
+            onClick={() => console.log("hello")}
+          />
+          <CardContent
+            onClick={() => console.log("hello")}
+            className={classes.cardContent}
+          >
+            <Typography gutterBottom variant="h5" component="h2">
+              {props.projectName}
+            </Typography>
+            <Typography>
+              {props.description || "enter description here"}
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button size="small" color="primary">
+              <StyledAnchor
+                href={props.demoLink || "https://google.ca"}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 Demo
-              </Button>
-              <Button size="small" color="primary">
+              </StyledAnchor>
+            </Button>
+
+            <Button size="small" color="primary">
+              <StyledAnchor
+                href={props.codeLink || "https://google.ca"}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 Code
-              </Button>
-            </CardActions>
-          </Card>
-        </Grid>
-      ))}
+              </StyledAnchor>
+            </Button>
+          </CardActions>
+        </Card>
+      </Grid>
     </>
   )
 }
+
+const StyledAnchor = styled.a`
+  text-decoration: none;
+  color: inherit;
+`
 
 const useStyles = makeStyles(theme => ({
   icon: {

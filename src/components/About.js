@@ -7,13 +7,7 @@ const About = () => {
   return (
     <div id="About" className={classes.about}>
       <Container maxWidth="md">
-        <Typography
-          variant="h5"
-          align="left"
-          color="textPrimary"
-          id="Projects"
-          gutterBottom
-        >
+        <Typography variant="h4" align="left" color="textPrimary" gutterBottom>
           About me
         </Typography>
         <Typography
@@ -22,16 +16,18 @@ const About = () => {
           color="textSecondary"
           component="p"
         >
-          Stuff about me goes here
-        </Typography>
-
-        <Typography
-          variant="subtitle1"
-          align="left"
-          color="textSecondary"
-          component="p"
-        >
-          Github, linked in, email
+          Nothing excites me more than solving difficult problems and turning
+          abstract ideas into code. I'm always eager to learn, an avid problem
+          solver, and a great team member! In my free time, I enjoy listening to
+          podcasts, playing chess, and attending tech meetups.
+          <br />
+          <br />
+          I'm a recent graduate from Queen's University and currently looking
+          for new opportunities.
+          <br />
+          <br />
+          Feel free to shoot me an email over at michael@michaelchoi.ca if you
+          want to get to know me more!
         </Typography>
       </Container>
     </div>
