@@ -27,6 +27,7 @@ const Front = () => {
         edges {
           node {
             publicURL
+            name
           }
         }
       }
