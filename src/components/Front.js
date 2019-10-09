@@ -1,5 +1,4 @@
 import React from "react"
-
 import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 import {
@@ -23,17 +22,12 @@ const Front = () => {
   }
   const data = useStaticQuery(graphql`
     query {
-      static: allFile(filter: { extension: { eq: "pdf" } }) {
-        edges {
-          node {
-            publicURL
-            name
-          }
-        }
+      resume: file(relativePath: { eq: "MichaelChoi-Resume.pdf" }) {
+        publicURL
       }
     }
   `)
-
+  // console.log(data.resume.edges[0].node.publicURL)
   return (
     <StyledDiv id="Front">
       <CssBaseline />
@@ -97,7 +91,7 @@ const Front = () => {
                   <Button
                     target="_blank"
                     rel="noopener noreferrer nofollow"
-                    href={data.static.edges[0].node.publicURL}
+                    href={data.resume.publicURL}
                     variant="outlined"
                     color="primary"
                   >
