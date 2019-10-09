@@ -31,6 +31,7 @@ export default function Projects() {
             {/* Individual project cards get called here with props
                 Requires 
                 projectName (string)
+                image (graphql query)
                 imageTitle (string image description)
                 description (string description)
                 demoLink
@@ -44,17 +45,17 @@ export default function Projects() {
               codeLink="https://github.com/CameronDunning/LearNow"
             />
             <Cards
-              key="Learn Now2"
-              projectName="Learn Now"
-              imageTitle="Home page of Learn Now"
-              description="A resource aggregation website similar to Pinterest."
+              key="Scheduler"
+              projectName="Scheduler"
+              imageTitle="Home page of Scheduler"
+              description="A front end react-app that allows users to schedule and cancel interviews."
               codeLink="https://github.com/CameronDunning/LearNow"
             />
             <Cards
-              key="Learn Now3"
-              projectName="Learn Now"
-              imageTitle="Home page of Learn Now"
-              description="A resource aggregation website similar to Pinterest."
+              key="Byte Sized"
+              projectName="Byte Sized"
+              imageTitle="Home page of Byte Sized"
+              description="A URL-shortening website similar to bitly.com."
               codeLink="https://github.com/CameronDunning/LearNow"
             />
           </Grid>
@@ -66,7 +67,7 @@ export default function Projects() {
 
 const StyledBackground = styled.main`
   background: #f1f1f1;
-  padding-top: 8vh;
+  padding-top: 5vh;
 `
 const useStyles = makeStyles(theme => ({
   cardGrid: {

@@ -66,16 +66,17 @@ const Front = () => {
                 <Mail size={25} />
               </StyledIcons>
             </StyledIconsGroup>
-            <Typography
-              variant="h5"
-              align="left"
-              color="textSecondary"
-              paragraph
-            >
-              A full-stack software developer that loves to learn about new tech
-              and collaborate with cool people.
-            </Typography>
-
+            <Styledintro>
+              <Typography
+                variant="h5"
+                align="left"
+                color="textSecondary"
+                paragraph
+              >
+                A full-stack software developer that loves to learn about new
+                tech and collaborate with cool people.
+              </Typography>
+            </Styledintro>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
@@ -117,6 +118,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
+const Styledintro = styled.div``
 const StyledBackground = styled.div`
   height: 100vh;
   display: flex;
@@ -130,11 +132,11 @@ const StyledContainer = styled(Container)`
   padding: 5%;
 `
 const StyledIconsGroup = styled.div`
-  padding: 1.5% 0;
+  padding-bottom: 2%;
 `
 
 const StyledIcons = styled.a`
-  margin: 2%;
+  margin-right: 2.5%;
   color: black;
   &:visited {
     color: inherit;
