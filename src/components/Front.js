@@ -1,7 +1,7 @@
 import React from "react"
 
 import styled from "styled-components"
-
+import { useStaticQuery, graphql } from "gatsby"
 import {
   CssBaseline,
   Button,
@@ -21,6 +21,17 @@ const Front = () => {
       .querySelector(`#Projects`)
       .scrollIntoView({ behavior: "smooth", block: "start" })
   }
+  const data = useStaticQuery(graphql`
+    query {
+      static: allFile(filter: { extension: { eq: "pdf" } }) {
+        edges {
+          node {
+            publicURL
+          }
+        }
+      }
+    }
+  `)
 
   return (
     <StyledDiv id="Front">
@@ -82,7 +93,13 @@ const Front = () => {
                   </Button>
                 </Grid>
                 <Grid item>
-                  <Button variant="outlined" color="primary">
+                  <Button
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    href={data.static.edges[0].node.publicURL}
+                    variant="outlined"
+                    color="primary"
+                  >
                     Resume
                   </Button>
                 </Grid>
@@ -120,6 +137,7 @@ const StyledContainer = styled(Container)`
 
 const StyledIcons = styled.a`
   margin: 5px;
+  color: black;
   &:visited {
     color: inherit;
   }
