@@ -29,7 +29,7 @@ const Front = () => {
   `)
   // console.log(data.resume.edges[0].node.publicURL)
   return (
-    <StyledDiv id="Front">
+    <StyledDiv id="Home">
       <CssBaseline />
       <StyledBackground className={classes.heroContent}>
         <StyledContainer maxWidth="md">
@@ -43,7 +43,29 @@ const Front = () => {
             >
               Michael Choi
             </Typography>
-
+            <StyledIconsGroup>
+              <StyledIcons
+                href="https://www.linkedin.com/in/michael-b-choi"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin size={25} />
+              </StyledIcons>
+              <StyledIcons
+                href="https://www.github.com/michael-choi"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github size={25} />
+              </StyledIcons>
+              <StyledIcons
+                href="mailto:michael@michaelchoi.ca"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Mail size={25} />
+              </StyledIcons>
+            </StyledIconsGroup>
             <Typography
               variant="h5"
               align="left"
@@ -53,28 +75,6 @@ const Front = () => {
               A full-stack software developer that loves to learn about new tech
               and collaborate with cool people.
             </Typography>
-
-            <StyledIcons
-              href="https://www.linkedin.com/in/michael-b-choi"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Linkedin size={25} />
-            </StyledIcons>
-            <StyledIcons
-              href="https://www.github.com/michael-choi"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Github size={25} />
-            </StyledIcons>
-            <StyledIcons
-              href="mailto:michael@michaelchoi.ca"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Mail size={25} />
-            </StyledIcons>
 
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
@@ -127,11 +127,14 @@ const StyledContainer = styled(Container)`
   display: flex;
   align-content: center;
   align-items: center;
-  padding: 5% 5%;
+  padding: 5%;
+`
+const StyledIconsGroup = styled.div`
+  padding: 1.5% 0;
 `
 
 const StyledIcons = styled.a`
-  margin: 5px;
+  margin: 2%;
   color: black;
   &:visited {
     color: inherit;

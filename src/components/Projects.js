@@ -66,6 +66,7 @@ export default function Projects() {
 
 const StyledBackground = styled.main`
   background: #f1f1f1;
+  padding-top: 8vh;
 `
 const useStyles = makeStyles(theme => ({
   cardGrid: {

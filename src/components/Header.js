@@ -4,9 +4,7 @@ import styled from "styled-components"
 
 const Header = () => {
   const handleClick = event => {
-    const anchor = (event.target.ownerDocument || document).querySelector(
-      `#${event.currentTarget.innerHTML}`
-    )
+    const anchor = document.querySelector(`#${event.currentTarget.innerHTML}`)
     if (anchor) {
       anchor.scrollIntoView({ behavior: "smooth", block: "start" })
     }
@@ -31,8 +29,9 @@ const StyledToolbar = styled(Toolbar)`
 
 const StyledAppBar = styled(AppBar)`
   background: #2858c7;
-  height: 5vh;
+  height: 8vh;
   justify-content: center;
+  position: fixed;
 `
 const StyledNavLink = styled.a`
   color: white;

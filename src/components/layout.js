@@ -36,7 +36,8 @@ const Layout = ({ children }) => {
   )
 }
 const StyledIcons = styled.a`
-  margin: 5px;
+  margin: 2%;
+  color: black;
   &:visited {
     color: inherit;
   }
@@ -46,7 +47,7 @@ const StyledIcons = styled.a`
 `
 
 const Footer = styled.footer`
-  padding: 10px 10px;
+  padding: 10% 10%;
   text-align: center;
 `
 export default Layout
