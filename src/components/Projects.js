@@ -52,6 +52,7 @@ export default function Projects() {
               techstack="PostgreSQL / Node / Express / React"
               imageTitle="Home page of Scheduler"
               description="A front end react-app that allows users to schedule and cancel interviews."
+              demoLink="https://michael-scheduler.netlify.com"
               codeLink="https://github.com/Michael-Choi/Scheduler"
             />
             <Cards
@@ -60,7 +61,7 @@ export default function Projects() {
               techstack="mongoDB / Express / Node"
               imageTitle="Home page of Byte Sized"
               description="A URL-shortening website similar to bitly.com."
-              demoLink="https://google.ca"
+              demoLink="https://byte-size.herokuapp.com/"
               codeLink="https://github.com/Michael-Choi/tinyapp"
             />
           </Grid>
