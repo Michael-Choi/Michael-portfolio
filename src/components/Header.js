@@ -1,8 +1,21 @@
 import React from "react"
 import { AppBar, Toolbar } from "@material-ui/core"
 import styled from "styled-components"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 const Header = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "logo.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 300, maxHeight: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
   const handleClick = event => {
     const anchor = document.querySelector(`#${event.currentTarget.innerHTML}`)
     if (anchor) {
@@ -13,18 +26,28 @@ const Header = () => {
     <header>
       <StyledAppBar position="relative">
         <StyledToolbar>
-          <StyledNavLink onClick={handleClick}>Home</StyledNavLink>
-          <StyledNavLink onClick={handleClick}>Projects</StyledNavLink>
-          <StyledNavLink onClick={handleClick}>About</StyledNavLink>
+          <div>
+            <a href="#Home">
+              <StyledImg fluid={data.file.childImageSharp.fluid} alt="Logo" />
+            </a>
+          </div>
+          <div>
+            <StyledNavLink onClick={handleClick}>Home</StyledNavLink>
+            <StyledNavLink onClick={handleClick}>Projects</StyledNavLink>
+            <StyledNavLink onClick={handleClick}>About</StyledNavLink>
+          </div>
         </StyledToolbar>
       </StyledAppBar>
     </header>
   )
 }
 
+const StyledImg = styled(Img)`
+  width: 5vh;
+`
 const StyledToolbar = styled(Toolbar)`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 `
 
 const StyledAppBar = styled(AppBar)`
@@ -35,7 +58,7 @@ const StyledAppBar = styled(AppBar)`
 `
 const StyledNavLink = styled.a`
   color: white;
-  padding: 5px 20px;
+  padding: 5px 15px;
   text-decoration: none;
   outline: white;
   font-size: 1.2em;
@@ -57,8 +80,8 @@ const StyledNavLink = styled.a`
     width: 0;
   }
   &:hover:after {
-    width: 100%;
-    left: 0;
+    width: 50%;
+    left: 25%;
     cursor: pointer;
   }
 `

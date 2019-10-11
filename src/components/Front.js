@@ -49,21 +49,21 @@ const Front = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Linkedin size={25} />
+                <Linkedin size={23} />
               </StyledIcons>
               <StyledIcons
                 href="https://www.github.com/michael-choi"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Github size={25} />
+                <Github size={23} />
               </StyledIcons>
               <StyledIcons
                 href="mailto:michael@michaelchoi.ca"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Mail size={25} />
+                <Mail size={23} />
               </StyledIcons>
             </StyledIconsGroup>
             <Styledintro>
@@ -111,7 +111,7 @@ const Front = () => {
 const useStyles = makeStyles(theme => ({
   heroContent: {
     backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6),
+    padding: theme.spacing(8, 1, 6),
   },
   heroButtons: {
     marginTop: theme.spacing(4),
@@ -132,7 +132,7 @@ const StyledContainer = styled(Container)`
   padding: 5%;
 `
 const StyledIconsGroup = styled.div`
-  padding-bottom: 2%;
+  padding-bottom: 2.5%;
 `
 
 const StyledIcons = styled.a`
