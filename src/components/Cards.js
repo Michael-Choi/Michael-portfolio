@@ -11,16 +11,16 @@ import {
   makeStyles,
 } from "@material-ui/core"
 import styled from "styled-components"
-
+import Img from "gatsby-image"
 const Cards = props => {
   const classes = useStyles()
   return (
     <>
       <Grid item xs={12} sm={6} md={4}>
         <Card className={classes.card}>
-          <CardMedia
+          <Img
             className={classes.cardMedia}
-            image={props.image || "https://source.unsplash.com/random"}
+            fixed={props.image || ""}
             title={props.imageTitle || `Demo image of ${props.projectName}`}
           />
           <CardContent className={classes.cardContent}>

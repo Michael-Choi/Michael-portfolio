@@ -8,11 +8,35 @@ import {
 } from "@material-ui/core"
 
 import styled from "styled-components"
-
 import Cards from "./Cards"
-
+import { useStaticQuery, graphql } from "gatsby"
 export default function Projects() {
   const classes = useStyles()
+  const data = useStaticQuery(graphql`
+    query {
+      bytesize: file(relativePath: { eq: "bytesize.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 500, maxHeight: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      learnnow: file(relativePath: { eq: "learnnow.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 500, maxHeight: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      scheduler: file(relativePath: { eq: "scheduler.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 500, maxHeight: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
 
   return (
     <React.Fragment>
@@ -42,27 +66,27 @@ export default function Projects() {
               key="Learn Now"
               projectName="Learn Now"
               techstack="PostgreSQL / Node / Express"
-              imageTitle="Home page of Learn Now"
               description="A resource aggregation website similar to Pinterest."
+              image={data.learnnow.childImageSharp.fluid}
               codeLink="https://github.com/CameronDunning/LearNow"
             />
             <Cards
               key="Scheduler"
               projectName="Scheduler"
               techstack="PostgreSQL / Node / Express / React"
-              imageTitle="Home page of Scheduler"
               description="A front end react-app that allows users to schedule and cancel interviews."
+              image={data.scheduler.childImageSharp.fluid}
               demoLink="https://michael-scheduler.netlify.com"
               codeLink="https://github.com/Michael-Choi/Scheduler"
             />
             <Cards
-              key="Byte Sized"
-              projectName="Byte Sized"
+              key="ByteSize"
+              projectName="ByteSize"
               techstack="mongoDB / Express / Node"
-              imageTitle="Home page of Byte Sized"
               description="A URL-shortening website similar to bitly.com."
+              image={data.bytesize.childImageSharp.fluid}
               demoLink="https://byte-size.herokuapp.com/"
-              codeLink="https://github.com/Michael-Choi/tinyapp"
+              codeLink="https://github.com/Michael-Choi/byteSize"
             />
           </Grid>
         </Container>
