@@ -85,7 +85,7 @@ export default function Projects() {
               techstack="mongoDB / Express / Node"
               description="A URL-shortening website similar to bitly.com."
               image={data.bytesize.childImageSharp.fluid}
-              demoLink="https://byte-size.herokuapp.com/"
+              // demoLink="https://byte-size.herokuapp.com/"
               codeLink="https://github.com/Michael-Choi/byteSize"
             />
           </Grid>
