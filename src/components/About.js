@@ -11,7 +11,7 @@ const About = () => {
           About me
         </Typography>
         <Typography
-          variant="subtitle1"
+          variant="h6"
           align="left"
           color="textSecondary"
           component="p"

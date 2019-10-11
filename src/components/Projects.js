@@ -36,10 +36,12 @@ export default function Projects() {
                 description (string description)
                 demoLink
                 codeLink
+                techstack
                  */}
             <Cards
               key="Learn Now"
               projectName="Learn Now"
+              techstack="PostgreSQL / Node / Express"
               imageTitle="Home page of Learn Now"
               description="A resource aggregation website similar to Pinterest."
               codeLink="https://github.com/CameronDunning/LearNow"
@@ -47,16 +49,19 @@ export default function Projects() {
             <Cards
               key="Scheduler"
               projectName="Scheduler"
+              techstack="PostgreSQL / Node / Express / React"
               imageTitle="Home page of Scheduler"
               description="A front end react-app that allows users to schedule and cancel interviews."
-              codeLink="https://github.com/CameronDunning/LearNow"
+              codeLink="https://github.com/Michael-Choi/Scheduler"
             />
             <Cards
               key="Byte Sized"
               projectName="Byte Sized"
+              techstack="mongoDB / Express / Node"
               imageTitle="Home page of Byte Sized"
               description="A URL-shortening website similar to bitly.com."
-              codeLink="https://github.com/CameronDunning/LearNow"
+              demoLink="https://google.ca"
+              codeLink="https://github.com/Michael-Choi/tinyapp"
             />
           </Grid>
         </Container>

@@ -22,39 +22,41 @@ const Cards = props => {
             className={classes.cardMedia}
             image={props.image || "https://source.unsplash.com/random"}
             title={props.imageTitle || `Demo image of ${props.projectName}`}
-            onClick={() => console.log("hello")}
           />
-          <CardContent
-            onClick={() => console.log("hello")}
-            className={classes.cardContent}
-          >
+          <CardContent className={classes.cardContent}>
             <Typography gutterBottom variant="h5" component="h2">
               {props.projectName}
+            </Typography>
+            <Typography variant="h7" color="textSecondary" component="p">
+              {props.techstack || ""}
             </Typography>
             <Typography>
               {props.description || "enter description here"}
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size="small" color="primary">
-              <StyledAnchor
-                href={props.demoLink || "https://google.ca"}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Demo
-              </StyledAnchor>
-            </Button>
-
-            <Button size="small" color="primary">
-              <StyledAnchor
-                href={props.codeLink || "https://google.ca"}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Code
-              </StyledAnchor>
-            </Button>
+            {props.demoLink && (
+              <Button size="small" color="primary">
+                <StyledAnchor
+                  href={props.demoLink}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Demo
+                </StyledAnchor>
+              </Button>
+            )}
+            {props.codeLink && (
+              <Button size="small" color="primary">
+                <StyledAnchor
+                  href={props.codeLink}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Code
+                </StyledAnchor>
+              </Button>
+            )}
           </CardActions>
         </Card>
       </Grid>
