@@ -88,6 +88,14 @@ export default function Projects() {
               // demoLink="https://byte-size.herokuapp.com/"
               codeLink="https://github.com/Michael-Choi/byteSize"
             />
+            <Cards
+              key="Portfolio"
+              projectName="Portfolio"
+              techstack="React / GraphQL / Gatsby"
+              description="A URL-shortening website similar to bitly.com."
+              image={data.bytesize.childImageSharp.fluid}
+              codeLink="https://github.com/Michael-Choi/Michael-portfolio"
+            />
           </Grid>
         </Container>
       </StyledBackground>
